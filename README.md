@@ -38,14 +38,15 @@ optional arguments:
 ```
 
 ## AWS Lambda Setup
-Runtime: Python 3.6
-Memory (suggested): 384MB
-Timeout (suggested): 10sec
-IAM Permissions: Lambda Basic Execution service role (for Cloudwatch Logs) and at the very least
+  * Runtime: Python 3.6
+  * Memory (suggested): 384MB
+  * Timeout (suggested): 10sec
+  * IAM Permissions: Lambda Basic Execution service role (for Cloudwatch Logs) and at the very least
 ec2:DescribeSpotPriceHistory (although it may be easier to use the AWS-managed `AmazonEC2ReadOnlyAccess` policy)
 
 ## AWS API Gateway Setup
-Integration Type: Lambda Function (using Lambda Proxy Integration)
+  * Integration Type: Lambda Function (using Lambda Proxy Integration)
+
 Setup method request as you see fit.  One example to sort of approximate how standalone execution works would be
 to setup a GET Method Request using the instance type as a path parameter and the script command-line options as
 URL Query String Parameters for the request.
